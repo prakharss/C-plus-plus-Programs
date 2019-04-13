@@ -1,0 +1,10 @@
+BACKLOG
+Print all distinct permutations of a given string with duplicates
+understanding of complexity in case of recursion
+
+IMP
+Backtracking is an algorithmic paradigm that tries different solutions until finds a solution that “works”. 
+Problems which are typically solved using backtracking technique have following property in common. 
+These problems can only be solved by trying every possible configuration and each configuration is tried only once. 
+A Naive solution for these problems is to try all configurations and output a configuration that follows given problem constraints. 
+Backtracking works in an incremental way and is an optimization over the Naive solution where all possible configurations are generated.

@@ -1,0 +1,2 @@
+stoi(str) - to convert "76" to integer
+to_string

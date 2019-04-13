@@ -1,0 +1,2 @@
+complexity of backtracking for n queen problem by recursion (complexity in case of recursion)
+why heap sort have space complexity of O(1) and quick sort have space complexity of O(log n) - when to consider recusion stack as space complexity

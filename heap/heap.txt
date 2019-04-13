@@ -1,0 +1,2 @@
+ways to form max heap with n distinct integer
+LRU Cache https://www.hackerrank.com/contests/justcode/challenges/lru-implementtion and interview bit

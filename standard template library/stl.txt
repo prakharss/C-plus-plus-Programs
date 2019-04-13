@@ -1,0 +1,15 @@
+BACKLOG
+unordered/ordered map and complexities of their operations 
+time complexity of different containers
+
+IMP THINGS TO REMEMBER 
+1)vector<int> vec(4,1) //vec of size 4 having all values equal to 1
+2)iterator for deque exists
+3)erase function is present for containers like map, set, vector
+4)iterator don't exist for queue, stack and priority_queue
+5)vector,map and set all have empty functions
+6)by default priority queue is a max heap 
+7)syntax for max heap is priority_queue<int> pq; and for min heap is priority_queue<int, vector<int>, greater<int> > pq; 
+8)set elements is only accessible using iterator but map elements can be accessed both by [] and iterator
+
+we can also sort vector of vector

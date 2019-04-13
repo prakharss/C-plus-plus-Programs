@@ -1,0 +1,5 @@
+BACKLOG
+number of inversions usig BIT
+do some questions based on BIT
+
+IMP
