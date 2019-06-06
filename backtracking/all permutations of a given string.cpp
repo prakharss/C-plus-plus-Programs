@@ -12,7 +12,7 @@ string globalString;
 vector<string> ans;
 int n;
 
-//O(n!) S(1)
+//O(n!) S(1) //it give the sorted order if given string is sorted
 void permuteUsingGlobalString(int start)
 {
     if(start<n-1)
@@ -21,14 +21,14 @@ void permuteUsingGlobalString(int start)
         {
             swap(globalString[start],globalString[i]);
             permuteUsingGlobalString(start+1);
-            swap(globalString[start],globalString[i]); //backtrack
+            swap(globalString[start],globalString[i]); //backtrack because of GLOBAL string 
         }
     }
     else
         ans.push_back(globalString);
 }
 
-//O(n!) S(1) //it give the sorted order //we can also sort vector of vector
+//O(n!) S(1) //it give the sorted order if given string is sorted
 void permuteNoBackTrackingStep(string str,int start)
 {
     if(start<n-1)
@@ -37,7 +37,8 @@ void permuteNoBackTrackingStep(string str,int start)
         {
             swap(str[start],str[i]);
             permuteNoBackTrackingStep(str,start+1); 
-            //no need of backtracking step but answer will not be affected if u will do the backtrack step
+            //no need of backtracking step as we are passing a string as ARGUMENT
+            //answer will not be affected if u will do the backtrack step
         }
     }
     else

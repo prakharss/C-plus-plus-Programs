@@ -78,9 +78,10 @@ int main()
 		
 	cout<<mergeSort(a,0,n-1); //by returning inversions in a recursion
 
+	//using a global variable
 	ans=0;
 	for(i=0;i<n;i++)
-		ans=ans+inv[i]; //using a global variable
+		ans=ans+inv[i]; 
 	cout<<ans;
 	
 	return 0;
