@@ -1,5 +1,5 @@
 // problem statement - Given a number N, find all prime numbers upto N ( N included ).
-// using sieve in O(sqrt(n)log(logn))
+// using sieve in O(n*(log(logn)))
 
 #include<bits/stdc++.h>
 using namespace std;
