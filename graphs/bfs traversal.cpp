@@ -48,7 +48,10 @@ int main()
 	for(i=1;i<=v;i++)
 	{
 		if(!vis[i])
+		{
+			cnt++;
 			bfs(i);	
+		}
 	}
 
 	return 0;

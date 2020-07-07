@@ -1,3 +1,7 @@
+/*
+We can optimise this using hashmap
+*/
+
 #include<bits/stdc++.h>
 using namespace std;
 
@@ -25,7 +29,9 @@ TreeNode *makeBinaryTreeUsingInAndPre(vector<int> &inorder, vector<int> &preorde
         return NULL;
     
     int mid; 
-    //no need to do this - take the map<node, index> mp
+    
+    //no need to do this
+    //take the map<node, index> mp
     for(int i=l;i<=r;i++)
     {
         if(inorder[i]==preorder[cnt])

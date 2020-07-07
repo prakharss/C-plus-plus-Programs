@@ -17,7 +17,7 @@ int main()
 	
 	sum=0; mx=INT_MIN;
 	for(i=0;i<n;i++)
-	{
+	{	
 		sum=sum+a[i];
 		mx=max(mx,sum);
 		if(sum<0)

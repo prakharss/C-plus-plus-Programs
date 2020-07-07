@@ -21,6 +21,7 @@ int main()
     
     stack<int> st; 
     mx=0; i=0;  
+    //2, 1, 5, 6, 2, 3
     while(i<n)
     {
         if(st.empty() || a[st.top()]<=a[i])
@@ -36,7 +37,8 @@ int main()
             if(st.empty())
                 mx=max(mx,a[tp]*i);
             else
-                mx=max(mx,a[tp]*(i-st.top()-1));  //rightIndex=i and leftIndex=st.top();
+                mx=max(mx,a[tp]*(i-st.top()-1));  
+            //rightIndex=i and leftIndex=st.top();
         }
     }
     

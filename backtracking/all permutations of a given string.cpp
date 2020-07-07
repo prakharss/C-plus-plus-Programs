@@ -63,3 +63,11 @@ int main()
         cout<<ans[i]<<" ";
 }
 
+
+abcd
+//backtracking  --> brute force + backtrack on basis of some condition
+
+//
+
+
+//brute force

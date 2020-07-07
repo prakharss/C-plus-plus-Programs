@@ -113,7 +113,7 @@ int main()
 	for(i=1;i<=v;i++)
 	{
 		if(!vis[i])
-			usingDFS(i,0);	
+			usingDFS(i,1);	
 	}
 
 	if(flag)

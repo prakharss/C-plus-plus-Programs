@@ -1,0 +1,13 @@
+1) Inorder, preorder and post order without recursion
+2) Print all kind of views of a Binary Tree (bottom, left, right, top)
+3) Print a Binary Tree in Vertical Order
+4) Level order traversal in spiral form (zig zag traversal)
+5) Check whether binary tree is a) BST or not and b) AVL or not
+6) Connect Nodes at Same Level (Populate Next Right Pointers Tree without extra space)
+7) Lowest Common Ancestor for a) BST b) Binary Tree
+8) Diameter of a Binary Tree 
+9) Find max and min height of a binary tree
+10) Write a) preorder sequence if inorder and postorder b) postorder sequence if inorder and preorder is given c) make a binary tree using inorder and postorder d) make a binary tree using inorder and preorder
+11) Check Two Trees are a) Identical or Not b) symetric (mirror image or not) c) invert a binary tree
+12) Given a binary tree, flatten it to a linked list in-place (discussed this in LinkList stand up) 
+13) Find a)total nodes  2)total leaf node in a binary tree

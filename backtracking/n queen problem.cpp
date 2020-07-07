@@ -47,7 +47,7 @@ bool isSafe(int row,int col)
     return true;
 }
 
-void nQueenProblem(int col)
+void nQueenProblem(int col)   col=0  col=1
 {
     if(col<n)
     {
@@ -77,3 +77,10 @@ int main()
         
     return 0;
 }
+
+0
+
+Q * * *
+* * * *      
+* * * *
+* * * *

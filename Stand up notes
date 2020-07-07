@@ -1,0 +1,167 @@
+HOMEWORK ASSIGNMENT (15-08-2017)
+1) Kth Permutation Sequence
+zrzahid.com/k-th-permutation-sequence/
+https://stackoverflow.com/questions/31216097/given-n-and-k-return-the-kth-permutation-sequence
+
+string getPermutation(int k, vector<int> &candidateSet) {
+    int n = candidateSet.size();
+    if (n == 0) {
+    	return "";
+    }
+    if (k > factorial(n)) return ""; // invalid. Should never reach here.
+
+    int f = factorial(n - 1);
+    int pos = k/f;
+    k %= f;
+    string ch = to_string(candidateSet[pos]);
+    // now remove the character ch from candidateSet. 
+    candidateSet.erase(candidateSet.begin() + pos);
+    return ch + getPermutation(k, candidateSet);
+}
+    
+string getPermutation(int n, int k) {
+    vector<int> candidateSet; 
+    for (int i = 1; i <= n; i++) candidateSet.push_back(i);
+    return getPermutation(k - 1, candidateSet);
+}
+
+2) Palindrome Partitioning
+Simple backtracking
+aab
+[a, a, b]
+
+void partitionHelper(int i, vector<string> &current, string &s, vector<vector<string> > &ans) 
+{
+
+    if (i == s.length()) {
+        // we reached the end of the string.
+        // Valid sequence of strings found.
+        ans.push_back(current);
+        return;
+    }
+
+    for (int j = i; j < s.length(); ++j) {
+        if (isPalindrome(s, i, j)) {
+                current.push_back(s.substr(i, j - i + 1));  //a
+                partitionHelper(j + 1, current, s, ans);
+                current.pop_back();
+        }
+    }
+}
+
+a    a    b
+0    1    2
+
+i=0   - j=0, j=1, j=2
+
+i=0 j=0  'a'    'a'
+
+i=1 - j=1, j=2
+i=1 j=1 - 'b'
+
+i=2  j=2  'b'   --- 'a', 'a', 'b' 
+
+3) Number of Squareful Arrays
+Construct a graph where an edge from ii to jj exists if (A[i] + A[j])(A[i]+A[j]) is a perfect square. Our goal is to investigate Hamiltonian paths of this graph: paths that visit all the nodes exactly once.
+
+A Hamiltonian path (or traceable path) is a path in an undirected or directed graph that visits each vertex exactly once.
+
+https://leetcode.com/articles/number-of-squareful-arrays/
+https://medium.com/@nitishchandra/996-number-of-squareful-arrays-70474821a069
+
+4) Gray Code
+Reverse logic (easy - kind of DP)
+Can be done easily without backtrack as well
+can we done with backtrack as well
+
+n=1  (0, 1)   ->  (1, 0) 
+0
+1
+
+n=2  (00, 01, 11, 01)  ->  (01, 11, 01, 00)
+ 00
+ 01
+ 11
+ 10
+
+ n=3
+  000 
+  001
+  011
+  001
+  101
+  111
+  101
+  100
+ 
+ n=4
+we can find for n=4
+
+
+
+
+LIVE ASSIGNMENT
+1) B Closest Points to Origin 
+Heap concept (implemented with complete binary tree)
+
+4, 1, 6, 9, 10, 3 n=6   k=3 (1, 4, 6)
+
+II)
+    6     - max heap   O(k) + O((n-k) log(k))
+   4 1
+
+I)
+- min heap  (k numbers)     O(n) + O(K log (n))
+   1
+  4  6
+ 9 10
+
+find Kth smallest and Kth largest number (using min and max heap)
+heap sort (building the heap and then heapify all the elements)
+build heap in O(n) from bottom up approach
+
+2) Maximum Difference
+|2s - sum of array| where s is the subset array of size B
+
+sMx=max of s
+sMn=min of s
+
+find maximum between |2sMx - sum of array| and |2sMn - sum of array|
+
+3) Number of sextuplets (or six values) that satisfy an equation
+take example of 1 and -1
+
+for (int i = 0; i < n; i++) 
+  if (arr[i])  // Checking d should be non-zero. 
+    for (int j = 0; j < n; j++) 
+      for (int k = 0; k < n; k++) 
+        RHS[index++] = 1LL*(arr[i] * (arr[j] + arr[k])); 
+
+// Sort RHS[] so that we can do binary search in it. 
+sort(RHS, RHS + index); 
+
+// Generating all possible values of LHS of the equation 
+// and finding the number of occurances of the value in RHS. 
+long long result = 0; 
+for (int i = 0; i < n; i++) 
+{ 
+    for (int j = 0; j < n; j++) 
+    { 
+        for(int k = 0; k < n; k++) 
+        { 
+            long long val = arr[i] * arr[j] + arr[k]; 
+            result += (upper_bound(RHS, RHS + index, val) - 
+                      lower_bound(RHS, RHS + index, val)); 
+            while(result>=mod)result-=mod;
+        } 
+    } 
+}
+
+4) Sum of the difference
+Try this question - Solution is possible in O(n)
+
+
+
+
+
+

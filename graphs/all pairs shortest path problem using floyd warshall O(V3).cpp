@@ -12,13 +12,29 @@ typedef long long int li;
 vector<pair<li,li> > vec[100000];
 li dist[1000][1000];
 
+
 void floydWarshall(li v)
 {
 	li i,j,k;
+	/* 
+		Add all vertices one by one to  
+	    the set of intermediate vertices.  
+	    ---> Before start of this iteration,  
+	    we have shortest distances between all  
+	    pairs of vertices such that the  
+	    shortest distances consider only the  
+	    vertices in set {0, 1, 2, .. k-1} as 
+	    intermediate vertices.  
+	    ----> After the end of this iteration,  
+	    vertex no. k is added to the set of  
+	    intermediate vertices and the set becomes {0, 1, 2, .. k} 
+    */
 	for(k=1;k<=v;k++)
 	{
+		//i is source vertex
 		for(i=1;i<=v;i++)
 		{
+			//j is destination vertex
 			for(j=1;j<=v;j++)
 			{
 				if(dist[i][k]+dist[k][j]<dist[i][j])

@@ -10,6 +10,8 @@ O(n*log(n)) S(1)
 #include<bits/stdc++.h>
 using namespace std;
 
+//O(log n)
+//O()
 void heapify(int a[],int ind,int n)
 {
     int left=2*ind+1;
@@ -34,6 +36,11 @@ void heapSort(int a[],int n)
     //building the heap from bottom O(n)
     for(int i=n/2-1;i>=0;i--)
         heapify(a,i,n); 
+
+    /*
+    
+    
+    */
     
     //sort elements using max heap formed above O(n*log(n))
     for(int i=n-1;i>=0;i--)

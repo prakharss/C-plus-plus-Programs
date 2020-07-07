@@ -7,6 +7,3 @@ int main()
 	getline(cin,str);
 	cout<<str.size()<<" "<<str<<"\n";
 }
-
-
-

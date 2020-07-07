@@ -4,7 +4,6 @@ predict the output of following program
 reference for stl for all imp and frequently used containers
 any alternative statement is written using single line comment in the same line
 
-
 INDEX   
 container                                     line
 1)vector:                                     36
@@ -363,7 +362,9 @@ void stl()
 		cout<<"\nPRIORITY QUEUE\n\n";
 		priority_queue<int> pq_mx;   //max_heap by default
 		priority_queue<int, vector<int> , greater<int> > pq_mn;   //this is the syntax for min heap
-		
+		/*
+			priority_queue<Node*, vector<Node*>, compare1> pq; 
+		*/
 		cout<<"Enter no. of elements u want in your priority queue\n";
 		cin>>n;
 		cout<<"\nEnter your elements\n";

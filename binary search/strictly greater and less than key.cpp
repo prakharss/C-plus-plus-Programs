@@ -7,7 +7,9 @@ O(log n) if array is already sorted otherwise O(n*log n) and S(1)
 using namespace std;
 typedef long long int li;
 
-li strictlyGreater(int a[],int n,int key)
+//1 2 2 2 5 8 11 11
+//just less than or equal to (from left)
+li justStrictlyGreater(int a[],int n,int key)
 {
 	li l,r,mid
 	l=0;  r=n-1;
@@ -20,10 +22,10 @@ li strictlyGreater(int a[],int n,int key)
 			r=mid-1;
 	}
 
-	return l; //here l will give value strictly greater than key and r will give value less than or equal to key
+	return l; //here l will give value just strictly greater than key and r will give value just less than or equal to key (from left)
 }
 
-li strictlyLesser(int a[],int n,int key)
+li justStrictlyLesser(int a[],int n,int key)
 {
 	l=0;  r=n-1;
 	while(l<=r)              
@@ -35,7 +37,7 @@ li strictlyLesser(int a[],int n,int key)
 			r=mid-1;
 	}
 	
-	return r; //here r will give value strictly less than key and l will give value greater than or equal to key
+	return r; //here r will give value strictly less than key and l will give value just greater than or equal to key (from left)
 }
 
 int main()

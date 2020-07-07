@@ -96,8 +96,8 @@ bool soduko(li i,li j)
 			x=findX(); y=findY(); //find first unassigned coordinates
 			if(soduko(x,y))
 				return true;
-
-			board[i][j]=0;
+			//
+			board[i][j]=0; //backtrack step
 		}	
 	}	
 	
@@ -134,3 +134,9 @@ int main()
 0 0 0 0 0 0 0 7 4
 0 0 5 2 0 6 3 0 0     
 */
+
+
+10  0
+
+10^10
+4, 3, 6, 

@@ -5,7 +5,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.Scanner;
 
-//how to compare strings
 public class Solution {
 	
 	static int cnt=0;
@@ -26,7 +25,7 @@ public class Solution {
 		util(preorder,inorder,mid+1,r);
 		
 		postorder.add(inorder[mid]);
-		return ;
+		return ; 
 	}
 	
 	public static void main(String[] args)

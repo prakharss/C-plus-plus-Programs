@@ -99,8 +99,8 @@ int main()
 	for(i=0;i<n;i++)
 		cin>>a[i];  		
 	
-	cout<<usingMinHeap(a,n,k)<<"\n";
-	cout<<usingMaxHeap(a,n,k);  
+	cout<<usingMinHeap(a,n,k)<<"\n"; //O(n)+O(k log n)
+	cout<<usingMaxHeap(a,n,k);  //O(k)+O(n-k)*log(k)
 
 	return 0;
 }

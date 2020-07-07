@@ -5,6 +5,7 @@ using namespace std;
 struct TrieNode{
 	bool end;
 	TrieNode *nextchar[26];
+	//int count;
 };
 
 TrieNode* createNode()
@@ -19,22 +20,23 @@ TrieNode* createNode()
 	return temp;
 }
 
-void insert(TrieNode *root,string str)
+void insert(TrieNode *node,string str)
 {
+	//abc
 	for(int i=0;i<str.size();i++)
 	{
-		if(root->nextchar[str[i]-'a']==NULL)
+		if(node->nextchar[str[i]-'a']==NULL)
 		{
 			TrieNode *temp;
 			temp=createNode();
-			root->nextchar[str[i]-'a']=temp;
-			root=temp;
+			node->nextchar[str[i]-'a']=temp;
+			node=temp;
 		}
 		else
-		root=root->nextchar[str[i]-'a'];
+			node=node->nextchar[str[i]-'a'];
 	}
 
-	root->end=true;
+	node->end=true;
 }
 
 bool search(TrieNode *root,string str)
@@ -58,8 +60,11 @@ void TrieDataStructure()
 	string str;
 	TrieNode *root;
 	root=createNode();  //null creation 
-	
+	//empty
 	cin>>n;
+     
+	//"abc", "axy","aby"//
+	
 	for(i=0;i<n;i++)
 	{
 		cin>>str;

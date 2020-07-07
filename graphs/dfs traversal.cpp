@@ -7,8 +7,9 @@ O(e+v) S(bm) space complexity, where b is the branching factor of the tree and m
 using namespace std;
 typedef long long int li;
 
-vector<li> vec[100001];
+vector<pair<int,int> > vec[100][100];   
 li vis[100001]={0};
+int cnt=0;
 
 void dfsByRecursion(li i)
 {
@@ -16,6 +17,11 @@ void dfsByRecursion(li i)
 	cout<<i<<" ";
 	for(li j=0;j<vec[i].size();j++)
 	{
+		if(vis[i][j]==true && parent!=i)
+		{
+			//cycle
+		}
+
 		if(!vis[vec[i][j]])
 			dfsByRecursion(vec[i][j]);
 	}		
@@ -60,7 +66,10 @@ int main()
 	for(i=1;i<=v;i++)
 	{
 		if(!vis[i])
+		{
+			cnt++;
 			dfsByRecursion(i);
+		}
 	}
 
 	for(i=1;i<=v;i++)

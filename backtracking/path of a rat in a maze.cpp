@@ -7,6 +7,8 @@ this gives all solutions but single solution can be implemented using return sta
 O(C(m+n-2,n-1)) S(n*m)
 */
 
+
+
 #include<bits/stdc++.h>
 #define N 1000
 using namespace std;

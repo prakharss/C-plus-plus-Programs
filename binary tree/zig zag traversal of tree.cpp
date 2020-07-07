@@ -24,34 +24,30 @@ void zigZagTraversal(TreeNode *A)
 	st1.push(A);
 	while(!st1.empty() || !st2.empty())
 	{
-		if(!st1.empty())
+		while(!st1.empty())
 		{
-			while(!st1.empty())
-			{
-				TreeNode *temp=st1.top();
-                cout<<temp->val<<" ";
-                st1.pop();
-				if(temp->left)
-					st2.push(temp->left);
+			TreeNode *temp=st1.top();
+            cout<<temp->val<<" ";
+            st1.pop();
+			if(temp->left)
+				st2.push(temp->left);
 
-				if(temp->right)
-					st2.push(temp->right);
-			}
+			if(temp->right)
+				st2.push(temp->right);
 		}
-		else if(!st2.empty())
+	
+	
+		while(!st2.empty())
 		{
-			while(!st2.empty())
-			{
-				TreeNode *temp=st2.top();
-                cout<<temp->val<<" ";
-                st2.pop();
-				if(temp->right)
-					st1.push(temp->right);
+			TreeNode *temp=st2.top();
+            cout<<temp->val<<" ";
+            st2.pop();
+			if(temp->right)
+				st1.push(temp->right);
 
-				if(temp->left)
-					st1.push(temp->left);
-			}
-		}
+			if(temp->left)
+				st1.push(temp->left);
+		}	
 	}
 }
 

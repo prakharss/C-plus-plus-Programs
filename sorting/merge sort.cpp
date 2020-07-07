@@ -53,9 +53,27 @@ void mergeSort(int arr[],int l,int r)
 		mergeSort(arr,l,m); //1
 		mergeSort(arr,m+1,r); //2
 		
+		//(2,3,4)    (1,5)
 		mergeTwoSortedHalves(arr,l,m,r); //Merge the two halves sorted in step 1 and 2
 	}
 }
+
+(2,3,4)    (1,5)
+
+
+      2 4 3 5 1
+
+   (2, 4, 3)         (5,1)
+    (2,3,4)       (1,5)
+
+
+
+  (2,4)   3          5     1
+
+ 2   4
+
+
+
 
 int main()
 {

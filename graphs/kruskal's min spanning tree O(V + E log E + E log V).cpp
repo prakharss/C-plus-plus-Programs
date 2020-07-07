@@ -27,7 +27,7 @@ int root(int x)
 {
     while(id[x] != x)
     {
-        x = id[x];
+        x = id[x]; //we can also add path compression step here
     }
     return x;
 }
@@ -69,7 +69,10 @@ long long kruskal()
             minimumCost += cost;
             union1(x, y);
             cnt++;
-        }    
+        }
+
+        if(cnt==V)
+            break;    
     }
 
     return minimumCost;
