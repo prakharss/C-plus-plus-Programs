@@ -10,10 +10,6 @@ O(e+v) S(bm) space complexity, where b is the branching factor of the tree and m
 code is written assuming that given graph is DAG
 */
 
-/*
-ryt now don't know the logic behind Kahns Algorithm
-*/
-
 #include<bits/stdc++.h>
 using namespace std;
 typedef long long int li;
@@ -55,6 +51,7 @@ void usingKahnsAlgo(li v)
 	while(!que.empty())
 	{
     	i=que.front();
+    	que.pop();
     	topOrder.push_back(i);
     	for(j=0;j<vec[i].size();j++)
     	{
@@ -62,8 +59,6 @@ void usingKahnsAlgo(li v)
     		if(inorder[vec[i][j]]==0)
     			que.push(vec[i][j]);
     	}
-        
-        que.pop();
 	}
 }
 

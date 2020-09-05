@@ -55,7 +55,7 @@ void dijkstra(li s)
 				dist[v]=dist[u]+w;
 				st.insert(make_pair(dist[v],v));
 			}		
-		}		
+		}	
 	}	
 }
 

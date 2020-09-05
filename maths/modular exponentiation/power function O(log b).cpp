@@ -14,11 +14,9 @@ typedef long long int li;
 //pair<li,li> pa[1000000];
 //string str1,str2;
 //li a[1000000];
-li power(li x,li y)
-{
+li power(li x,li y) {
 	li ans=1;
-	while(y)
-	{
+	while(y) {
 		if(y%2)
 			ans=ans*x;
 			

@@ -44,11 +44,11 @@ int main()
 		}		
 	}
 	
-	for(i=0;i<e;i++)
-	{
+	//if multiple edges between 2 edges (take min distance in this case)
+	for(i=0;i<e;i++) {
 		cin>>x>>y>>w;
-		dist[x][y]=w;  
-		dist[y][x]=w;
+		dist[x][y]=min(dist[x][y],w);//dist[x][y]=w; //if only single edge is present b/w x and y
+		dist[y][x]=min(dist[y][x],w);
 	}
 	
 	floydWarshall(v);	

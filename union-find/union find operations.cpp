@@ -1,7 +1,8 @@
 /*
 union find operation (for undirected graph)
 if there are m (union or find) operation on n vertices 
-then O(n + m (log n)) S(n)
+then 
+O(n + m (log n)) S(n)
 */
 
 #include<bits/stdc++.h>
@@ -21,7 +22,7 @@ void initialize(li nodes)
 	}
 }
 
-//O(log(V))
+//O(log(V)) 
 li root(li x)
 {
     while(parent[x]!=x) //if something is root (let say x), it means parent[x]=x 
@@ -77,6 +78,9 @@ int main()
 
     return 0;	
 }
+
+
+
 
 
 

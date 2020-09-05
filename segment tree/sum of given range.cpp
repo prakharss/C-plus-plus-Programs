@@ -32,7 +32,6 @@ int *buildSegmentTree(int a[], int n) {
 	
 	segmentUtil(a,0,n-1,seg,0);
 	return seg;
-	
 }
 
 int sumQuery(int l, int r, int start, int end, int *seg, int index) {

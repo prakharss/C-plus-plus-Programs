@@ -8,33 +8,30 @@ in DFS we are keeping track of all vertices which are inside the stack and while
 cycle exists in the given graph 
 */
 
-/*
-ryt now don't know the logic behind Kahns Algorithm
-*/
-
 #include<bits/stdc++.h>
 using namespace std;
 typedef long long int li;
 
 vector<li> vec[100001];
-vector<li> topOrder;
-li chk[100001]={0};
+int cnt;
+li recStack[100001]={0};
 li vis[100001]={0};
 bool flag;
 
-void usingDFS(li i)
+bool usingDFS(li i)
 {
-	vis[i]=1; chk[i]=1;
+	vis[i]=1; recStack[i]=1;
 	for(li j=0;j<vec[i].size();j++)
 	{
-		if(chk[vec[i][j]])
-			flag=true;
+		if(recStack[vec[i][j]])
+			return true;
 			
-		if(!vis[vec[i][j]])
-			usingDFS(vec[i][j]);			
+		if(!vis[vec[i][j]] && usingDFS(vec[i][j]))
+			return true;
 	}
 
-	chk[i]=0;			
+	recStack[i]=0;
+	return false;			
 }
 
 void usingKahnsAlgo(li v)
@@ -57,15 +54,14 @@ void usingKahnsAlgo(li v)
 	while(!que.empty())
 	{
     	i=que.front();
-    	topOrder.push_back(i);
+    	 que.pop();
+    	cnt++;
     	for(j=0;j<vec[i].size();j++)
     	{
     		inorder[vec[i][j]]--;
     		if(inorder[vec[i][j]]==0)
     			que.push(vec[i][j]);
     	}
-        
-        que.pop();
 	}
 }
 
@@ -83,10 +79,12 @@ int main()
 	flag=false;
 	for(i=1;i<=v;i++)
 	{
-		if(!vis[i])
-			usingDFS(i);	
+		if(!vis[i]) {
+			flag=usingDFS(i);
+			if(flag)
+				break;	
+		}
 	}
-
 	if(flag)
 		cout<<1;
 	else 
@@ -94,8 +92,9 @@ int main()
     
     //Kahns Algo
     cout<<"\n";
+    cnt=0;
 	usingKahnsAlgo(v); 
-	if(topOrder.size()!=v)
+	if(cnt!=v)
 		cout<<1;
 	else
 		cout<<0;

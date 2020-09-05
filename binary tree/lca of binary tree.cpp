@@ -34,20 +34,20 @@ TreeNode* lca(TreeNode *root, int n1, int n2)
 	if (root == NULL)
 		return NULL;
 
-	if (root->val == n1 || root->val == n2)
+	if (root->val == n1 || root->val == n2)  //
 		return root;
 
 	TreeNode *left_lca = lca(root->left, n1, n2);
 	TreeNode *right_lca = lca(root->right, n1, n2);
 
-		if (left_lca != NULL && right_lca != NULL)
-			return root;
-		else if (left_lca != NULL)
-			return left_lca;
-		else if (right_lca != NULL)
-			return right_lca;
-		else
-			return NULL;
+	if (left_lca != NULL && right_lca != NULL)
+		return root;
+	else if (left_lca != NULL)
+		return left_lca;
+	else if (right_lca != NULL)
+		return right_lca;
+	else
+		return NULL;
 }
 
 bool find(TreeNode *root, int k)

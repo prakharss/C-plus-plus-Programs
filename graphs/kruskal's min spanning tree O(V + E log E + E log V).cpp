@@ -71,7 +71,7 @@ long long kruskal()
             cnt++;
         }
 
-        if(cnt==V)
+        if(cnt==V-1)
             break;    
     }
 
